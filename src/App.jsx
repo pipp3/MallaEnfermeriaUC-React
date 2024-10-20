@@ -4,6 +4,7 @@ import InfoSection from "./components/Info";
 import Malla from "./components/Malla";
 import Button from "./components/Button";
 import Stats from "./components/Stats";
+import Legend from "./components/Legend";
 function App() {
   return (
     <div className="mx-auto">
@@ -18,6 +19,7 @@ function App() {
         <div className="mt-2 flex">
           <Button />
           <Stats />
+          <Legend />
         </div>
         <Malla />
       </main>
