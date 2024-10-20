@@ -16,7 +16,7 @@ function App() {
             <div className="flex-grow h-px bg-gradient-to-r from-rose-200 via-gray-400 to-rose-500"></div>
           </div>
         </div>
-        <div className="mt-2 flex">
+        <div className="mt-2 flex overflow-x-auto">
           <Button />
           <Stats />
           <Legend />
