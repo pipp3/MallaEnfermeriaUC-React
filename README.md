@@ -16,13 +16,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributions">Contributions</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
     <li><a href="#contact">Contact</a>
-        <ul>
-        <li><a href="#support-me">Support Me</a></li>
-      </ul>
     </li>
 
   </ol>
@@ -32,7 +27,7 @@
 
 ![malla-interactiva](public/readme/malla.png)
 
-Web app containing the 2022 Nursing career (UC Chile) curriculum. Users can interact with the curriculum to see their progress during their careers, as well as view statistics.
+Web app containing the 2022 Nursing career (UC Chile) curriculum. Users can interact with the curriculum to see their progress during their careers, as well as view statistics. Created with Vite, React and TailwindCss, originally intended for Astro but due to incompatibilities it was not closed.
 
 ### Built With
 
@@ -52,14 +47,14 @@ Web app containing the 2022 Nursing career (UC Chile) curriculum. Users can inte
 
 ### Prerequisites
 
-- [Npm]((https://www.npmjs.com))
+- [Npm](https://www.npmjs.com)
 
 ### Installation
 
 1. Clone the repo
 
 ```bash
-https://github.com/loretito/malla-interactiva-uc
+https://github.com/pipp3/MallaEnfermeriaUC-React.git
 ```
 
 2. Install packages
