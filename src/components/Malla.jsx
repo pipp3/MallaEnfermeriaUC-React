@@ -15,7 +15,7 @@ const Malla = () => {
   
 
   return (
-    <div className="flex xl:justify-center overflow-x-auto">
+    <div className="flex xl:justify-center overflow-x-auto mt-1">
     {Object.entries(coursesBySemesterAndYear).map(
       ([year, coursesBySemester]) => (
         <div key={year} className="">
