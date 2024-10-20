@@ -10,7 +10,7 @@ const Semester = ({ semester, courses }) => {
 
   return (
     <div className="ml-1 w-full">
-      <div className="bg-rose-400">
+      <div className="bg-rose-400 hover:bg-rose-700">
         <h2
           className="font-semibold mb-2 text-center mt-2 text-white rounded-md hover:cursor-pointer"
           onClick={() => handleSemesterClick(courses)}

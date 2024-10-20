@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
-import { ramos2022 } from "../utils/malla-2022";
+import React, { useEffect, useState } from "react";
 import { CourseContext } from "./CourseContext";
+import {ramos2022} from "../utils/malla-2022"
 
+//get info from localStorage
 const storedFinishedCourses =
   JSON.parse(localStorage.getItem("finishedCourses")) || [];
 const credits = JSON.parse(localStorage.getItem("credits")) || 0;
 
 export const CourseProvider = ({ children }) => {
+  //set info from localStorage
   const [finishedCourses, setFinishedCourses] = useState(storedFinishedCourses);
   const [totalCredits, setTotalCredits] = useState(credits);
-  // use malla selected
-  const data = ramos2022;
+
+  const data=ramos2022;
 
   // divide courses by semester
   const coursesBySemesterAndYear = data.reduce((acc, course) => {
@@ -25,23 +27,34 @@ export const CourseProvider = ({ children }) => {
     return acc;
   }, {});
 
+  //To store finishedCourse and credits
   useEffect(() => {
     localStorage.setItem("finishedCourses", JSON.stringify(finishedCourses));
     localStorage.setItem("credits", JSON.stringify(totalCredits));
   }, [finishedCourses]);
 
-  const handleClick = (course) => {
+  
+  //To reset everything
+  const handleReset = () => {
+    setTotalCredits(0);
+    setFinishedCourses([]);
+  };
+
+  //TAKE A COURSE
+
+  const handleClick = course => {
     const isFinished = finishedCourses.includes(course.id);
     if (!isFinished) {
-      if (course.cr) setTotalCredits((state) => state + course.cr);
-      setFinishedCourses((prevFinishedCourses) => [
+      if (course.cr) setTotalCredits(state => state + course.cr);
+
+      setFinishedCourses(prevFinishedCourses => [
         ...prevFinishedCourses,
         course.id,
       ]);
     } else {
-      if (course.cr) setTotalCredits((state) => state - course.cr);
-      setFinishedCourses((prevFinishedCourses) =>
-        prevFinishedCourses.filter((id) => id !== course.id)
+      if (course.cr) setTotalCredits(state => state - course.cr);
+      setFinishedCourses(prevFinishedCourses =>
+        prevFinishedCourses.filter(id => id != course.id)
       );
     }
   };
@@ -49,10 +62,13 @@ export const CourseProvider = ({ children }) => {
   return (
     <CourseContext.Provider
       value={{
+        handleReset,
+        totalCredits,
+        setTotalCredits,
+        finishedCourses,
+        setFinishedCourses,
         coursesBySemesterAndYear,
         handleClick,
-        finishedCourses,
-        totalCredits,
       }}
     >
       {children}

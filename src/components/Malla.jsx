@@ -5,7 +5,7 @@ import { CourseContext } from "../context/CourseContext.jsx";
 
 const Malla = () => {
   const { coursesBySemesterAndYear, handleClick } = useContext(CourseContext);
-  
+
   const handleYearClick = (year) => {
     Object.values(coursesBySemesterAndYear[year])
       .flat()
@@ -20,7 +20,7 @@ const Malla = () => {
       ([year, coursesBySemester]) => (
         <div key={year} className="">
           <h2
-            className="bg-[#2d5699] hover:bg-[#1e427a] text-center m-1 text-white font-bold rounded-md cursor-pointer"
+            className="bg-rose-500 hover:bg-rose-700 text-center m-1 text-white font-bold rounded-md cursor-pointer"
             onClick={() => handleYearClick(year)}
           >
             {`Año ${year}`}
