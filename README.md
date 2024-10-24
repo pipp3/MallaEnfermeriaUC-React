@@ -25,7 +25,7 @@
 
 ## About The Project
 
-![malla-interactiva](public/readme/malla.png)
+![malla-interactiva](public/readme/mallaOriginal.png)
 
 Web app containing the 2022 Nursing career (UC Chile) curriculum. Users can interact with the curriculum to see their progress during their careers, as well as view statistics. Created with Vite, React and TailwindCss, originally intended for Astro but due to incompatibilities it was not closed.
 
