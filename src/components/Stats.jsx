@@ -5,15 +5,73 @@ export default function Stats() {
   const { totalCredits, finishedCourses } = useContext(CourseContext);
 
   return (
-    <div className="flex flex-col sm:flex-row justify-center text-center ml-2 items-center text-sky-500 font-semibold bg-rose-100 rounded-md p-2 hover:bg-rose-700 hover:text-white cursor-pointer sm:py-2 md:px-8">
-      <div className="flex mr-12 mb-2 sm:mb-0 sm:mr-8">
-        <p className="mr-2">Total creditos: {totalCredits} de 515</p>{""}
-        <p>({((totalCredits * 100) / 515).toFixed(1)}%)</p>
+    <div className="flex flex-col sm:flex-row justify-center text-center ml-2 items-center gap-4 sm:gap-6 p-4 bg-gradient-to-r from-rose-50 to-rose-100 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+        <div className="flex flex-col items-center">
+          <div className="text-2xl font-bold text-rose-600">{totalCredits}</div>
+          <div className="text-xs text-gray-600">de 515 créditos</div>
+        </div>
+        <div className="w-16 h-16 sm:w-20 sm:h-20 relative">
+          <svg className="transform -rotate-90 w-full h-full">
+            <circle
+              cx="40"
+              cy="40"
+              r="36"
+              stroke="currentColor"
+              strokeWidth="8"
+              fill="none"
+              className="text-gray-200"
+            />
+            <circle
+              cx="40"
+              cy="40"
+              r="36"
+              stroke="currentColor"
+              strokeWidth="8"
+              fill="none"
+              className="text-rose-500"
+              strokeDasharray={`${(totalCredits / 515) * 226} 226`}
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm font-semibold text-rose-600">
+            {((totalCredits * 100) / 515).toFixed(1)}%
+          </div>
+        </div>
       </div>
 
-      <div className="flex">
-        <p className="mr-2">Ramos aprobados: {finishedCourses.length}</p>
-        <p>({((finishedCourses.length * 100) / 43).toFixed(1)}%)</p>
+      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+        <div className="flex flex-col items-center">
+          <div className="text-2xl font-bold text-rose-600">{finishedCourses.length}</div>
+          <div className="text-xs text-gray-600">de 43 ramos</div>
+        </div>
+        <div className="w-16 h-16 sm:w-20 sm:h-20 relative">
+          <svg className="transform -rotate-90 w-full h-full">
+            <circle
+              cx="40"
+              cy="40"
+              r="36"
+              stroke="currentColor"
+              strokeWidth="8"
+              fill="none"
+              className="text-gray-200"
+            />
+            <circle
+              cx="40"
+              cy="40"
+              r="36"
+              stroke="currentColor"
+              strokeWidth="8"
+              fill="none"
+              className="text-rose-500"
+              strokeDasharray={`${(finishedCourses.length / 43) * 226} 226`}
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm font-semibold text-rose-600">
+            {((finishedCourses.length * 100) / 43).toFixed(1)}%
+          </div>
+        </div>
       </div>
     </div>
   );
