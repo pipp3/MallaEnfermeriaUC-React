@@ -331,7 +331,7 @@ export const ramos2022 = [
     id: 26,
     code: "XXXX",
     course: "Formacion General",
-    cr: 15,
+    cr: 10,
     year: 3,
     semester: "V",
     cc: CEL,

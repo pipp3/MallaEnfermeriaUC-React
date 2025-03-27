@@ -9,7 +9,7 @@ export default function Stats() {
       <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
         <div className="flex flex-col items-center">
           <div className="text-2xl font-bold text-rose-600">{totalCredits}</div>
-          <div className="text-xs text-gray-600">de 515 créditos</div>
+          <div className="text-xs text-gray-600">de 510 créditos</div>
         </div>
         <div className="w-16 h-16 sm:w-20 sm:h-20 relative">
           <svg className="transform -rotate-90 w-full h-full">
@@ -30,12 +30,12 @@ export default function Stats() {
               strokeWidth="8"
               fill="none"
               className="text-rose-500"
-              strokeDasharray={`${(totalCredits / 515) * 226} 226`}
+              strokeDasharray={`${(totalCredits / 510) * 226} 226`}
               strokeLinecap="round"
             />
           </svg>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm font-semibold text-rose-600">
-            {((totalCredits * 100) / 515).toFixed(1)}%
+            {((totalCredits * 100) / 510).toFixed(1)}%
           </div>
         </div>
       </div>
